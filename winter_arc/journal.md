@@ -1,3 +1,10 @@
+# Winter Arc 
+
+## 2025-12-22(Winter Arc Day 1)
+### ウィンターアークを知る
+
+## 2025-12-23（Winter Arc Day 2）
+
 ## 2025-12-23（Winter Arc Day 2）
 ### 感謝
 - Winter Arcを千坂さんと共有した事
