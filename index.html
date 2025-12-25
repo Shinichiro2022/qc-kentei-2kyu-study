@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Career Digital Twin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* ============================
+   Golden Ratio Design System
+============================ */
+        :root {
+            /* Golden Ratio */
+            --phi: 1.618;
+
+            /* Base spacing */
+            --space-xs: 8px;
+            --space-sm: calc(var(--space-xs) * var(--phi));
+            --space-md: calc(var(--space-sm) * var(--phi));
+            --space-lg: calc(var(--space-md) * var(--phi));
+            --space-xl: calc(var(--space-lg) * var(--phi));
+
+            /* Colors (Dark default) */
+            --bg: #0f1115;
+            --panel: #151922;
+            --card: #1c2130;
+            --text-main: #f5f7fa;
+            --text-sub: #9aa4b2;
+            --accent: #4da3ff;
+            --accent-soft: rgba(77, 163, 255, 0.15);
+
+            /* Radius */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+
+        body.light {
+            --bg: #f6f7f9;
+            --panel: #ffffff;
+            --card: #f0f2f6;
+            --text-main: #0f1115;
+            --text-sub: #5f6b7a;
+            --accent: #2f6fed;
+            --accent-soft: rgba(47, 111, 237, 0.15);
+        }
+
+        /* ============================
+   Base
+============================ */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                "Inter", "Noto Sans JP", sans-serif;
+            transition: background .3s, color .3s;
+        }
+
+        /* ============================
+   Layout (Golden Ratio)
+============================ */
+        .app {
+            display: grid;
+            grid-template-columns: 38.2% 61.8%;
+            min-height: 100vh;
+        }
+
+        /* ============================
+   Left: Digital Twin
+============================ */
+        .twin {
+            background: linear-gradient(160deg,
+                    var(--panel),
+                    var(--card));
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .twin-header h1 {
+            font-size: 22px;
+            margin: 0 0 var(--space-xs);
+            letter-spacing: 0.04em;
+        }
+
+        .twin-header p {
+            margin: 0;
+            color: var(--text-sub);
+            font-size: 13px;
+        }
+
+        /* Avatar */
+        .avatar {
+            margin: var(--space-xl) auto;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 30% 30%,
+                    #ffffff,
+                    #bfc7d5 60%,
+                    #8a94a8);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.35);
+            transition: opacity .3s, transform .3s;
+        }
+
+        .avatar.away {
+            opacity: 0.25;
+            transform: scale(0.96);
+        }
+
+        .status {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            background: var(--accent-soft);
+            color: var(--accent);
+        }
+
+        button.primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* ============================
+   Right: Skills
+============================ */
+        .content {
+            padding: var(--space-xl);
+        }
+
+        .content h2 {
+            margin: 0 0 var(--space-md);
+            font-size: 20px;
+        }
+
+        /* Skill Shelf */
+        .shelf {
+            display: flex;
+            align-items: flex-end;
+            gap: var(--space-md);
+        }
+
+        .skill {
+            width: 64px;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(to top,
+                    var(--accent),
+                    #8fc4ff);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: var(--space-xs);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow:
+                0 12px 24px rgba(0, 0, 0, 0.25);
+            transition: transform .2s;
+        }
+
+        .skill:hover {
+            transform: translateY(-6px);
+        }
+
+        .lv1 {
+            height: 72px;
+        }
+
+        .lv2 {
+            height: 96px;
+        }
+
+        .lv3 {
+            height: 120px;
+        }
+
+        .lv4 {
+            height: 144px;
+        }
+
+        .lv5 {
+            height: 168px;
+        }
+
+        /* ============================
+   Footer Hint
+============================ */
+        .hint {
+            margin-top: var(--space-lg);
+            color: var(--text-sub);
+            font-size: 12px;
+        }
+
+        /* ============================
+   Responsive
+============================ */
+        @media (max-width: 900px) {
+            .app {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="dark">
+
+    <div class="app">
+
+        <!-- ======================
+       Digital Twin
+  ======================= -->
+        <section class="twin">
+            <div>
+                <div class="twin-header">
+                    <h1>Career Digital Twin</h1>
+                    <p>Skill visualization & growth map</p>
+                </div>
+
+                <div class="avatar" id="avatar"></div>
+                <div class="status" id="status">Working</div>
+            </div>
+
+            <div class="controls">
+                <button onclick="toggleWork()">外出</button>
+                <button class="primary" onclick="toggleTheme()">Dark / Light</button>
+            </div>
+        </section>
+
+        <!-- ======================
+       Skills
+  ======================= -->
+        <section class="content">
+            <h2>Skills</h2>
+
+            <div class="shelf" id="shelf"></div>
+
+            <div class="hint">
+                Career PIM data can be connected here.<br>
+                Skill height represents proficiency level.
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        /* ============================
+           Data
+        ============================ */
+        const skills = [
+            { name: "Python", level: 4 },
+            { name: "SQL", level: 5 },
+            { name: "BI", level: 5 },
+            { name: "WordPress", level: 3 },
+            { name: "QC", level: 2 }
+        ];
+
+        const shelf = document.getElementById("shelf");
+
+        skills.forEach(s => {
+            const el = document.createElement("div");
+            el.className = `skill lv${s.level}`;
+            el.textContent = s.name;
+            shelf.appendChild(el);
+        });
+
+        /* ============================
+           State
+        ============================ */
+        let working = true;
+
+        function toggleWork() {
+            working = !working;
+            document.getElementById("avatar")
+                .classList.toggle("away", !working);
+            document.getElementById("status")
+                .textContent = working ? "Working" : "Away";
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle("light");
+        }
+    </script>
+
+</body>
+
+</html>
