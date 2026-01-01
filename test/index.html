@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Identity — 真一郎</title>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            background: #050505;
+            overflow: hidden;
+        }
+
+        #stage {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        svg {
+            width: 80vw;
+        }
+
+        .stroke {
+            fill: none;
+            stroke: #1a1a1a;
+            /* ← 黒すぎない */
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw 1.4s ease-out forwards;
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* 墨感：安全な重ね */
+        .ink2 {
+            opacity: 0.25;
+        }
+
+        .ink3 {
+            opacity: 0.15;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="stage">
+        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- 真 -->
+            <g transform="translate(50,40) rotate(-3)">
+                <path class="stroke" stroke-width="3" d="M40 80 Q90 70 140 75" style="animation-delay:0s" />
+                <path class="stroke" stroke-width="2.5" d="M90 75 L85 130" style="animation-delay:0.2s" />
+                <path class="stroke" stroke-width="2" d="M55 100 Q90 95 125 98" style="animation-delay:0.4s" />
+                <path class="stroke" stroke-width="2" d="M58 120 Q90 115 122 118" style="animation-delay:0.6s" />
+                <path class="stroke" stroke-width="3.5" d="M45 145 Q90 135 145 140" style="animation-delay:0.8s" />
+                <path class="stroke" stroke-width="2.5" d="M75 145 Q65 185 40 210" style="animation-delay:1.0s" />
+                <path class="stroke" stroke-width="3" d="M115 145 Q135 180 165 195" style="animation-delay:1.2s" />
+            </g>
+
+            <!-- 一 -->
+            <g transform="translate(220,130) rotate(-5)">
+                <path class="stroke" stroke-width="4.5" d="M0 20 Q80 -10 150 5" style="animation-delay:1.6s" />
+            </g>
+
+            <!-- 郎 -->
+            <g transform="translate(410,50) rotate(-4)">
+                <path class="stroke" stroke-width="2.5" d="M20 30 Q40 25 50 25" style="animation-delay:2.0s" />
+                <path class="stroke" stroke-width="2.5" d="M15 50 Q45 45 70 48" style="animation-delay:2.2s" />
+                <path class="stroke" stroke-width="2" d="M42 50 L40 90" style="animation-delay:2.4s" />
+                <path class="stroke" stroke-width="2.5" d="M18 90 Q45 85 68 88 L65 130 Q45 135 15 130"
+                    style="animation-delay:2.6s" />
+                <path class="stroke" stroke-width="2.5" d="M25 140 Q45 170 70 185" style="animation-delay:2.8s" />
+                <path class="stroke" stroke-width="2" d="M60 145 Q50 165 40 175" style="animation-delay:3.0s" />
+                <path class="stroke" stroke-width="3.5" d="M85 45 Q135 40 125 85 Q115 120 85 125"
+                    style="animation-delay:3.2s" />
+                <path class="stroke" stroke-width="3" d="M90 125 L95 230" style="animation-delay:3.4s" />
+            </g>
+
+        </svg>
+    </div>
+
+</body>
+
+</html>

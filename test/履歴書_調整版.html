@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>履歴書（調整版）</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: "MS Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+            background: #e8e8e8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1em;
+        }
+
+        .resume-container {
+            width: 100%;
+            max-width: 1200px;
+            aspect-ratio: 16/9;
+            background: #fff;
+            display: flex;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, .2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .page {
+            width: 50%;
+            height: 100%;
+            padding: 1.2%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+            margin-bottom: 0.6em;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: .3em .45em;
+            font-size: clamp(8px, 0.72vw, 12px);
+            vertical-align: middle;
+            line-height: 1.35;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 0.6em;
+        }
+
+        .header h1 {
+            font-size: clamp(15px, 1.85vw, 26px);
+            letter-spacing: .5em;
+            font-weight: bold;
+            margin-left: .5em;
+        }
+
+        .date-row td {
+            border-bottom: none;
+            text-align: right;
+            font-size: clamp(7px, 0.65vw, 10px);
+            padding: .3em .45em;
+        }
+
+        .section-header {
+            background: #f0f0f0;
+            font-weight: bold;
+            text-align: center;
+            font-size: clamp(8px, 0.75vw, 12px);
+        }
+
+        .block {
+            height: 5.4em;
+            min-height: 54px;
+        }
+
+        .footer-note {
+            font-size: clamp(7px, 0.58vw, 9px);
+            margin-top: auto;
+            padding-top: .4em;
+            color: #666;
+        }
+
+        .name-cell {
+            font-size: clamp(12px, 1.4vw, 19px) !important;
+            font-weight: bold;
+            letter-spacing: .1em;
+        }
+
+        .photo-cell {
+            width: 20%;
+            min-width: 65px;
+            text-align: center;
+            background: #f9f9f9;
+            color: #999;
+            font-size: clamp(7px, 0.65vw, 10px);
+        }
+
+        .contact-info {
+            font-size: clamp(7px, 0.7vw, 11px);
+            line-height: 1.45;
+        }
+
+        .contact-info strong {
+            font-size: clamp(8px, 0.75vw, 11px);
+        }
+
+        .address-row-postal td {
+            padding: .25em .45em;
+        }
+
+        .address-row-street td {
+            padding: .35em .45em;
+        }
+
+        .right-page {
+            padding-top: calc(1.2% + 3.1em);
+        }
+
+        .right-page table {
+            margin-bottom: 0.6em;
+        }
+
+        .right-page table:first-child {
+            margin-top: 0;
+        }
+
+        .right-page table:last-child {
+            margin-bottom: auto;
+        }
+
+        /* 印刷最適化 */
+        @media print {
+            body {
+                display: block;
+                height: auto;
+                padding: 0;
+                background: #fff;
+            }
+
+            .resume-container {
+                width: 297mm;
+                height: 210mm;
+                max-width: none;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .page {
+                overflow: visible;
+            }
+
+            .right-page {
+                padding-top: 1.2%;
+            }
+
+            th,
+            td {
+                font-size: 10px;
+                padding: 3px 5px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .name-cell {
+                font-size: 16px !important;
+            }
+
+            .block {
+                height: 5em;
+            }
+
+            .address-row-postal td,
+            .address-row-street td {
+                padding: 3px 5px;
+            }
+
+            @page {
+                size: A4 landscape;
+                margin: 0;
+            }
+        }
+
+        /* タブレット・小画面対応 */
+        @media (max-width: 900px) {
+            .resume-container {
+                flex-direction: column;
+                aspect-ratio: auto;
+                max-width: 600px;
+            }
+
+            .page {
+                width: 100%;
+            }
+
+            .right-page {
+                padding-top: 1.2%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume-container">
+
+        <!-- ===== 左ページ ===== -->
+        <div class="page left-page">
+
+            <div class="header">
+                <h1>履　歴　書</h1>
+            </div>
+
+            <table>
+                <tr class="date-row">
+                    <td colspan="6">2025年12月30日　現在</td>
+                </tr>
+
+                <tr>
+                    <td style="width:14%">フリガナ</td>
+                    <td colspan="3">タナカ　シンイチロウ</td>
+                    <td style="width:14%">※性別：男性</td>
+                    <td rowspan="7" class="photo-cell">写真<br></td>
+                </tr>
+
+                <tr>
+                    <td rowspan="2">氏　名</td>
+                    <td colspan="3" rowspan="2" class="name-cell">
+                        田中　真一郎
+                    </td>
+                    <td rowspan="2" style="text-align:center">印</td>
+                </tr>
+                <tr></tr>
+
+                <tr>
+                    <td>生年月日</td>
+                    <td style="text-align:center;width:10%">西暦</td>
+                    <td colspan="2"><strong>1983年6月15日</strong></td>
+                    <td>生（満<strong>42</strong>歳）</td>
+                </tr>
+
+                <tr>
+                    <td>フリガナ</td>
+                    <td colspan="3">トウキョウトアオメシヒガシアオメ</td>
+                    <td rowspan="3" class="contact-info">
+                        携帯電話<br>080-4052-3152<br>
+                        E-Mail<br>beatsniper0615@gmail.com
+                    </td>
+                </tr>
+
+                <tr class="address-row-postal">
+                    <td rowspan="2">現住所</td>
+                    <td colspan="3">〒198-0042</td>
+                </tr>
+                <tr class="address-row-street">
+                    <td colspan="3">
+                        東京都青梅市東青梅1-6-12-201
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th style="width:10%">年</th>
+                    <th style="width:7%">月</th>
+                    <th>学歴・職歴（各別にまとめて書く）</th>
+                </tr>
+
+                <tr>
+                    <td colspan="3" class="section-header">学　歴</td>
+                </tr>
+                <tr>
+                    <td>2002</td>
+                    <td>3</td>
+                    <td>東京都立福生高等学校　卒業</td>
+                </tr>
+                <tr>
+                    <td>2002</td>
+                    <td>4</td>
+                    <td>専門学校ミューズ音楽院　ギター学科　入学</td>
+                </tr>
+                <tr>
+                    <td>2004</td>
+                    <td>3</td>
+                    <td>専門学校ミューズ音楽院　ギター学科　卒業</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" class="section-header">職　歴</td>
+                </tr>
+                <tr>
+                    <td>2011</td>
+                    <td>11</td>
+                    <td>個人事業主として開業</td>
+                </tr>
+                <tr>
+                    <td>2019</td>
+                    <td>1</td>
+                    <td>一身上の都合により廃業</td>
+                </tr>
+                <tr>
+                    <td>2019</td>
+                    <td>2</td>
+                    <td>光洋電子工業株式会社　入社</td>
+                </tr>
+                <tr>
+                    <td>2022</td>
+                    <td>10</td>
+                    <td>株式会社ジェイテクトエレクトロニクスに社名変更</td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td>現在に至る</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align:right;font-weight:bold">以　上</td>
+                </tr>
+            </table>
+
+            <div class="footer-note">
+                ※「性別」欄：記載は任意です。
+            </div>
+
+        </div>
+
+        <!-- ===== 右ページ ===== -->
+        <div class="page right-page">
+
+            <table>
+                <tr>
+                    <th style="width:12%">年</th>
+                    <th style="width:8%">月</th>
+                    <th>資格・語学</th>
+                </tr>
+                <tr>
+                    <td>2021</td>
+                    <td></td>
+                    <td>ビジネスマネジャー検定試験®</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td></td>
+                    <td>QC検定（品質管理検定）3級</td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td><strong>その他特記すべき事項</strong>
+                        <div class="block"></div>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td><strong>趣味・スポーツ・特技・好きな学科など</strong>
+                        <div class="block"></div>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td style="line-height:1.6">
+                        <strong>備考</strong><br>
+                        ※2005年9月～2011年10月の間は有限会社エビスインターナショナルにてアルバイトとしてメンズアパレルの自社ECサイト運営に従事しておりました。
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</body>
+
+</html>
