@@ -3,92 +3,79 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Identity — 真一郎</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>揮毫：真一郎</title>
     <style>
-        html,
         body {
             margin: 0;
-            background: #050505;
-            overflow: hidden;
-        }
-
-        #stage {
-            position: fixed;
-            inset: 0;
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
+            background-color: #2c2c2c;
+            /* 重厚感のある背景 */
+            font-family: "Sawarabi Mincho", serif;
         }
 
-        svg {
-            width: 80vw;
+        .scroll-container {
+            position: relative;
+            background: #fffaf0;
+            /* 和紙の色 */
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 2px solid #d4af37;
+            /* 金の縁取り */
+            border-radius: 4px;
+            text-align: center;
         }
 
-        .stroke {
-            fill: none;
-            stroke: #1a1a1a;
-            /* ← 黒すぎない */
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: draw 1.4s ease-out forwards;
+        /* 和紙の質感を出すためのオーバーレイ */
+        .scroll-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png');
+            pointer-events: none;
+            opacity: 0.5;
         }
 
-        @keyframes draw {
-            to {
-                stroke-dashoffset: 0;
+        img {
+            max-width: 100%;
+            height: auto;
+            /* フェードインアニメーション */
+            animation: fadeIn 3s ease-in-out forwards;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            font-size: 1.2rem;
+            letter-spacing: 0.5em;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
             }
-        }
 
-        /* 墨感：安全な重ね */
-        .ink2 {
-            opacity: 0.25;
-        }
-
-        .ink3 {
-            opacity: 0.15;
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div id="stage">
-        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-
-            <!-- 真 -->
-            <g transform="translate(50,40) rotate(-3)">
-                <path class="stroke" stroke-width="3" d="M40 80 Q90 70 140 75" style="animation-delay:0s" />
-                <path class="stroke" stroke-width="2.5" d="M90 75 L85 130" style="animation-delay:0.2s" />
-                <path class="stroke" stroke-width="2" d="M55 100 Q90 95 125 98" style="animation-delay:0.4s" />
-                <path class="stroke" stroke-width="2" d="M58 120 Q90 115 122 118" style="animation-delay:0.6s" />
-                <path class="stroke" stroke-width="3.5" d="M45 145 Q90 135 145 140" style="animation-delay:0.8s" />
-                <path class="stroke" stroke-width="2.5" d="M75 145 Q65 185 40 210" style="animation-delay:1.0s" />
-                <path class="stroke" stroke-width="3" d="M115 145 Q135 180 165 195" style="animation-delay:1.2s" />
-            </g>
-
-            <!-- 一 -->
-            <g transform="translate(220,130) rotate(-5)">
-                <path class="stroke" stroke-width="4.5" d="M0 20 Q80 -10 150 5" style="animation-delay:1.6s" />
-            </g>
-
-            <!-- 郎 -->
-            <g transform="translate(410,50) rotate(-4)">
-                <path class="stroke" stroke-width="2.5" d="M20 30 Q40 25 50 25" style="animation-delay:2.0s" />
-                <path class="stroke" stroke-width="2.5" d="M15 50 Q45 45 70 48" style="animation-delay:2.2s" />
-                <path class="stroke" stroke-width="2" d="M42 50 L40 90" style="animation-delay:2.4s" />
-                <path class="stroke" stroke-width="2.5" d="M18 90 Q45 85 68 88 L65 130 Q45 135 15 130"
-                    style="animation-delay:2.6s" />
-                <path class="stroke" stroke-width="2.5" d="M25 140 Q45 170 70 185" style="animation-delay:2.8s" />
-                <path class="stroke" stroke-width="2" d="M60 145 Q50 165 40 175" style="animation-delay:3.0s" />
-                <path class="stroke" stroke-width="3.5" d="M85 45 Q135 40 125 85 Q115 120 85 125"
-                    style="animation-delay:3.2s" />
-                <path class="stroke" stroke-width="3" d="M90 125 L95 230" style="animation-delay:3.4s" />
-            </g>
-
-        </svg>
+    <div class="scroll-container">
+        <img src="shinichiro.svg" alt="真一郎 揮毫">
+        <h1>真一郎</h1>
     </div>
 
 </body>

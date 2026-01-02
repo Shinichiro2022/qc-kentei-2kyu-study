@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#fffaf0" rx="10" ry="10"/>
+  
+  <g fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 60 Q100 55 130 60" stroke-width="6" /> <path d="M65 80 Q90 75 115 80 M65 95 Q90 90 115 95" /> <path d="M60 75 L60 115 L120 115 L120 75 Z" />
+    <path d="M70 135 Q50 150 40 160 M110 135 Q130 150 145 160" stroke-width="5" /> <path d="M45 130 Q90 125 135 130" stroke-width="7" /> <path d="M170 100 Q220 90 270 100" stroke-width="10">
+      <animate attributeName="stroke-dasharray" from="0,500" to="500,0" dur="1.5s" />
+    </path>
+
+    <path d="M305 60 L305 140 M305 85 Q330 80 335 65" stroke-width="5" /> <path d="M305 100 Q330 105 325 130" />
+    <path d="M350 60 Q385 70 375 100 Q365 130 350 165" stroke-width="8" /> <path d="M375 100 L345 100" />
+  </g>
+  
+  <rect x="350" y="150" width="30" height="30" fill="#d32f2f" opacity="0.8" />
+  <text x="355" y="172" font-family="serif" font-size="12" fill="white" font-weight="bold">吉</text>
+  
+  <circle cx="140" cy="50" r="2" fill="#1a1a1a" />
+  <circle cx="280" cy="110" r="1.5" fill="#1a1a1a" />
+</svg>
